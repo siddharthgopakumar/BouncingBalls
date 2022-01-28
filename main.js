@@ -77,7 +77,6 @@ class EvilCircle extends Shape {
     }
     setControls(){
         window.addEventListener('keydown', e => {
-            console.log(e.key);
             switch(e.key){
                 case 'a':
                     this.x -= this.velX;
@@ -102,16 +101,16 @@ class EvilCircle extends Shape {
     }   
     checkBounds() {
         if((this.x + this.size) >= width)   {
-            
+            this.x -= this.size;
         }
         if((this.x - this.size) <= 0)   {
-            
+            this.x += this.size;
         }
         if((this.y + this.size) >= height)   {
-            
+            this.y -= this.size;
         }
         if((this.y - this.size) <= 0)   {
-            
+            this.y += this.size;
         }
     }
     collisionDetect(){
